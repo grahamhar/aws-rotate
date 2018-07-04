@@ -1,7 +1,6 @@
 # aws-rotate
 
-.. image:: https://travis-ci.org/grahamhar/aws-rotate.svg?branch=master
-       :target: https://travis-ci.org/grahamhar/aws-rotate
+[![alt text](https://travis-ci.org/grahamhar/aws-rotate.svg?branch=master "Build Sttaus")](https://travis-ci.org/grahamhar/aws-rotate/builds/400138472)
 
 Rotate AWS Access Keys and update local credentials file.
 
