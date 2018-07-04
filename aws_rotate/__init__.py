@@ -77,7 +77,10 @@ def delete_old_access_key(key_to_delete):
     return True
 
 
-if __name__ == '__main__':
+def run():
+    """
+    Execute the rotation of AWS keys
+    """
     aws_profile = get_current_aws_profile()
     aws_credentials_file = get_aws_credentials_file()
     backup_aws_credentials(aws_credentials_file)
@@ -88,3 +91,7 @@ if __name__ == '__main__':
     aws_credentials.set(aws_profile, 'aws_secret_access_key', new_access_key['SecretAccessKey'])
     write_aws_credentials(aws_credentials, aws_credentials_file)
     delete_old_access_key(current_access_key)
+
+
+if __name__ == '__main__':
+    run()
