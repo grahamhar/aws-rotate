@@ -9,6 +9,7 @@ pytest-cov = "*"
 wheel = "*"
 setuptools = "*"
 twine = "*"
+coveralls = "*"
 
 [packages]
 "boto3" = "*"

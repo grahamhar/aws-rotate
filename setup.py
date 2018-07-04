@@ -60,7 +60,7 @@ setup(
     # Similar to `install_requires` above, these must be valid existing
     # projects.
     extras_require={  # Optional
-        'dev': ['pytest', 'pytest-cov'],
+        'dev': ['pytest', 'pytest-cov', 'coveralls'],
     },
 
 
