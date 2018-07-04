@@ -6,10 +6,12 @@ name = "pypi"
 [dev-packages]
 pytest = "*"
 pytest-cov = "*"
+wheel = "*"
+setuptools = "*"
+twine = "*"
 
 [packages]
 "boto3" = "*"
-
 
 [requires]
 python_version = "3.6"
