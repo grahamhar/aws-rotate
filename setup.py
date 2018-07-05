@@ -14,7 +14,7 @@ with open(path.join(here, 'README.md'), encoding='utf-8') as f:
 setup(
     name='aws-rotate',  # Required
 
-    version='0.0.2',  # Required
+    version='0.0.3',  # Required
 
     description='A simple AWS Access ID/Secret rotation script',  # Required
 
