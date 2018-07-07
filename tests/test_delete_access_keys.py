@@ -12,7 +12,7 @@ def test_returns_new_keys(mock_iam):
     assert delete_old_access_key('AFAKEKEY') == True
 
 @patch('boto3.client')
-def test_an_exception_is_raised_too_many_keys(mock_iam):
+def test_an_exception_is_raised_key_not_found(mock_iam):
     """
     It should raise an exception if the AWS client raises an exception
     """
