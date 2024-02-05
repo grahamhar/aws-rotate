@@ -30,6 +30,13 @@ Clone this repo and install the dev packages
 pip install -e ".[dev]"
 ```
 
+Install pre-commit hooks to help ensure standards are met, or run `isort --profile=black .` with `black -S` before
+committing.
+
+```bash
+pre-commit install
+```
+
 Run the tests (automated on PR opening)
 
 ```

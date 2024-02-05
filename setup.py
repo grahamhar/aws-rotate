@@ -47,7 +47,14 @@ setup(
     # Similar to `install_requires` above, these must be valid existing
     # projects.
     extras_require={  # Optional
-        'dev': ['pytest', 'pytest-cov<2.6', 'coveralls', 'pre-commit', 'black'],
+        'dev': [
+            'pytest',
+            'pytest-cov<2.6',
+            'coveralls',
+            'pre-commit',
+            'black',
+            'isort',
+        ],
     },
     # To provide executable scripts, use entry points in preference to the
     # "scripts" keyword. Entry points provide cross-platform support and allow
