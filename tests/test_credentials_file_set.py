@@ -1,6 +1,8 @@
 import os
-from aws_rotate import get_aws_credentials_file
 from unittest.mock import patch
+
+from aws_rotate import get_aws_credentials_file
+
 
 @patch('aws_rotate.os.path.expanduser')
 def test_with_no_credentials_env_var(mock_expand):

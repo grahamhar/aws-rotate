@@ -24,7 +24,7 @@ body:
       label: Steps To Reproduce
       description: Steps to reproduce the behavior.
       placeholder: |
-        1. Python Version/Operating System 
+        1. Python Version/Operating System
         2. Command being run
         3. Error/Stacktrace
     validations:
