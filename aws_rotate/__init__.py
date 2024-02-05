@@ -1,6 +1,7 @@
 """
 Make rotating AWS Access Keys easier.
 """
+
 import os
 from configparser import ConfigParser
 from shutil import copyfile
@@ -17,7 +18,9 @@ def get_current_aws_profile():
 
 
 def get_aws_credentials_file():
-    return os.path.expanduser(os.getenv('AWS_SHARED_CREDENTIALS_FILE', '~/.aws/credentials'))
+    return os.path.expanduser(
+        os.getenv('AWS_SHARED_CREDENTIALS_FILE', '~/.aws/credentials')
+    )
 
 
 def open_aws_credentials(credentials_file):
@@ -64,7 +67,10 @@ def create_new_access_key():
     """
     iam_client = boto3.client('iam')
     new_access_keys = iam_client.create_access_key()['AccessKey']
-    return {'AccessKeyId': new_access_keys['AccessKeyId'], 'SecretAccessKey': new_access_keys['SecretAccessKey']}
+    return {
+        'AccessKeyId': new_access_keys['AccessKeyId'],
+        'SecretAccessKey': new_access_keys['SecretAccessKey'],
+    }
 
 
 def delete_old_access_key(key_to_delete):
@@ -85,10 +91,14 @@ def run():
     aws_credentials_file = get_aws_credentials_file()
     backup_aws_credentials(aws_credentials_file)
     aws_credentials = open_aws_credentials(aws_credentials_file)
-    current_access_key = get_current_access_key_from_config(aws_credentials, aws_profile)
+    current_access_key = get_current_access_key_from_config(
+        aws_credentials, aws_profile
+    )
     new_access_key = create_new_access_key()
     aws_credentials.set(aws_profile, 'aws_access_key_id', new_access_key['AccessKeyId'])
-    aws_credentials.set(aws_profile, 'aws_secret_access_key', new_access_key['SecretAccessKey'])
+    aws_credentials.set(
+        aws_profile, 'aws_secret_access_key', new_access_key['SecretAccessKey']
+    )
     write_aws_credentials(aws_credentials, aws_credentials_file)
     delete_old_access_key(current_access_key)
 

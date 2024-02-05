@@ -1,6 +1,9 @@
 import configparser
+
 import pytest
+
 from aws_rotate import get_current_access_key_from_config
+
 
 def test_key_returned():
     """
@@ -10,12 +13,14 @@ def test_key_returned():
     config['default'] = {'aws_access_key_id': 'FAKEKEY'}
     assert 'FAKEKEY' == get_current_access_key_from_config(config, 'default')
 
+
 def test_profile_not_found():
     """
     When the profile doesn't exist an exception is raised
     """
     with pytest.raises(KeyError):
         get_current_access_key_from_config(configparser.ConfigParser(), 'default')
+
 
 def test_key_not_found():
     """
